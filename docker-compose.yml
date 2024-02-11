@@ -10,8 +10,8 @@ services:
       - '9090:9090'
     command: ['run', '-d', '-c', '/etc/krakend/krakend.json']
     networks:
-      - network-krakend
+      - staging-network-service
 
 networks:
-  network-krakend:
-    name: network-krakend
+  staging-network-service:
+    name: staging-network-service
