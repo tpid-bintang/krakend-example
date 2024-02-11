@@ -1,0 +1,17 @@
+version: '3'
+services:
+  krakend_ce:
+    image: devopsfaith/krakend
+    container_name: api-waroengsteak.belum.live
+    restart: always
+    volumes:
+      - ./config/krakend:/etc/krakend
+    ports:
+      - '9090:9090'
+    command: ['run', '-d', '-c', '/etc/krakend/krakend.json']
+    networks:
+      - network-krakend
+
+networks:
+  network-krakend:
+    name: network-krakend
